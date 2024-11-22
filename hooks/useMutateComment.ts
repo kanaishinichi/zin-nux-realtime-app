@@ -3,7 +3,7 @@ import { supabase } from '@/utils/supabase'
 import { Comment, EditedComment } from '@/types'
 
 export const useMutateComment = () => {
-  const createCommentMutaion = useMutation(
+  const createCommentMutation = useMutation(
     async (comment: Omit<Comment, 'id' | 'created_at'>) => {
       const { data, error } = await supabase.from('comments').insert(comment)
       if (error) throw new Error(error.message)
@@ -45,5 +45,5 @@ export const useMutateComment = () => {
       },
     },
   )
-  return { createCommentMutaion, updateCommentMutation, deleteCommentMutation }
+  return { createCommentMutation, updateCommentMutation, deleteCommentMutation }
 }
