@@ -6,7 +6,6 @@ import { useMutatePost } from '@/hooks/useMutatePost'
 import { useDownloadUrl } from '@/hooks/useDownloadUrl'
 import { useUploadPostImg } from '@/hooks/useUploadPostImg'
 import { Spinner } from './Spinner'
-
 export const PostFormMemo: FC = () => {
   const session = useStore((state) => state.session)
   const editedPost = useStore((state) => state.editedPost)
